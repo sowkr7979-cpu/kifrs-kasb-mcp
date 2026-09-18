@@ -1,0 +1,17 @@
+{
+  "name": "kifrs-mcp",
+  "version": "0.1.0",
+  "description": "MCP server wrapping kifrs.com (K-IFRS 기준서 검색/조회)",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "kifrs-mcp": "index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.24.0"
+  }
+}

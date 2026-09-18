@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}} 보고용 요약</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;800&display=swap">
+<style>
+  @page { size: A4; margin: 15mm 18mm 12mm 18mm; }
+  :root{ --green:#3F9C35; --blue:#009CDE; --navy:#00153D; --red:#C0392B;
+         --g1:#515356; --g2:#888B8D; --g4:#CDCECF; --g5:#F0F0F0; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{ font-family:"Prelo","Noto Sans KR","Malgun Gothic",Helvetica,Arial,sans-serif;
+        font-size:9.8pt; line-height:1.72; color:#25282a; background:#fff;
+        -webkit-print-color-adjust:exact; print-color-adjust:exact; word-break:keep-all; }
+  .doc{ max-width:174mm; margin:0 auto; padding:12mm 0 16mm; }
+  @media print{ .doc{ max-width:none; padding:0; } }
+  @media screen and (max-width:760px){ .doc{ padding:6mm 5mm; } }
+
+  .hd{ display:flex; align-items:flex-end; justify-content:space-between;
+       border-bottom:2.2pt solid var(--navy); padding-bottom:2.2mm; margin-bottom:4.6mm; }
+  .hd h1{ font-size:16.5pt; font-weight:800; color:var(--navy); margin:0; letter-spacing:-0.4pt; }
+  .hd .sub{ font-size:9.2pt; color:var(--g1); font-weight:600; margin-top:1.4mm; }
+  .hd .rt{ text-align:right; }
+  .hd .rt img{ height:9.2mm; }
+  .hd .rt .dt{ font-size:8.2pt; color:var(--g2); margin-top:1.4mm; }
+
+  .lead{ border-left:3pt solid var(--green); background:#F6FAF5; padding:3.2mm 5mm; margin:0 0 5mm; }
+  .lead p{ margin:0; font-size:9.9pt; line-height:1.68; color:var(--navy); }
+  .lead p + p{ margin-top:1.8mm; color:var(--g1); }
+
+  h2{ font-size:10pt; font-weight:700; color:var(--navy); margin:4.4mm 0 1.2mm;
+      padding-bottom:1mm; border-bottom:0.6pt solid var(--g4); page-break-after:avoid; }
+  p{ margin:0 0 3mm; text-align:justify; }
+  b{ color:var(--navy); font-weight:700; }
+
+  table{ width:100%; border-collapse:collapse; margin:1.5mm 0 3.5mm; font-size:8.9pt; }
+  th{ background:var(--g5); border:0.6pt solid var(--g4); border-top:1.4pt solid var(--green);
+      padding:1.5mm 2.2mm; font-weight:700; color:var(--navy); text-align:center; }
+  td{ border:0.6pt solid var(--g4); padding:1.5mm 2.2mm; vertical-align:top; }
+  td.c{ text-align:center; }
+  .no{ color:var(--red); font-weight:700; } .ok{ color:var(--green); font-weight:700; } .amb{ color:#E8A33D; font-weight:700; }
+
+  .close{ border-top:1pt solid var(--green); margin-top:4.6mm; padding-top:2.8mm; page-break-inside:avoid; }
+  .close p{ margin:0; color:var(--navy); }
+
+  .ft{ margin-top:4mm; display:flex; justify-content:space-between; align-items:flex-end; gap:6mm; page-break-inside:avoid; }
+  .ft .l{ font-size:7pt; color:var(--g2); line-height:1.55; max-width:116mm; text-align:justify; }
+  .ft .r{ text-align:right; font-size:9pt; color:var(--navy); font-weight:700; white-space:nowrap; }
+  .ft .r .en{ font-size:7pt; color:var(--g2); font-weight:400; letter-spacing:0.2pt; }
+</style>
+</head>
+<body>
+<div class="doc">
+<div class="hd">
+  <div>
+    <h1>{{TITLE}}</h1>
+    <div class="sub">{{SUBTITLE}} &nbsp;·&nbsp; {{CLIENT}} 귀중</div>
+  </div>
+  <div class="rt">
+    <img src="{{LOGO_DATA_URI}}" alt="로고">
+    <div class="dt">{{DATE}}</div>
+  </div>
+</div>
+<div class="lead">
+  <p>검토 결과를 두세 문장으로 씁니다. 첫 문장이 결론이고, 근거 규정은 <a class="ref" href="{{URL}}">규정명</a>처럼 링크합니다.</p>
+  <p>결론이 왜 그런지, 무엇이 달랐다면 결론이 바뀌었을지 한 문단으로 씁니다.</p>
+</div>
+<h2>무엇이 문제인지</h2>
+<p>쟁점을 한 문단으로 설명합니다. 근거 조문은 <a class="ref" href="{{URL}}">○○법 제○조</a>처럼 본문 안에서 링크합니다.</p>
+<table>
+  <thead><tr><th style="width:30%">쟁점</th><th style="width:16%">판정</th><th style="width:54%">판단의 근거</th></tr></thead>
+  <tbody>
+    <tr><td>쟁점 1</td><td class="c no">확정</td><td>왜 확정인지 한 문장.</td></tr>
+    <tr><td>쟁점 2</td><td class="c amb">조건에 따라</td><td>어떤 조건에 따라 달라지는지 한 문장.</td></tr>
+    <tr><td>쟁점 3</td><td class="c ok">해당 없음</td><td>왜 해당 없는지 한 문장.</td></tr>
+  </tbody>
+</table>
+<h2>판단이 갈리는 기준</h2>
+<p>등급이나 결론을 가르는 요소를 두 가지 이내로 씁니다.</p>
+<h2>함께 보실 것</h2>
+<p>관련 회계·세무 쟁점을 한 문단으로. 근거는 <a class="ref" href="{{URL}}">해석례 문서번호</a>로 링크합니다.</p>
+<div class="close">
+  <p><b>가장 먼저 하실 일은 두 가지입니다.</b> 실행 권고 1. 실행 권고 2.</p>
+</div>
+<div class="ft">
+  <div class="l">※ 본 요약은 {{DATE}}자 「{{TITLE}}」 검토의견서의 보고용 요약이며, 전제와 한계는 의견서 본문에 따릅니다.</div>
+  <div class="r">{{FIRM_KR}}<div class="en">{{FIRM_EN}}</div></div>
+</div>
+</div>
+</body>
+</html>

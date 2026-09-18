@@ -1,0 +1,15 @@
+# 허용 목록 방식: 아래에 명시한 것만 저장소에 들어간다. 그 밖의 모든 파일·폴더는 무시한다.
+/*
+!/.gitignore
+!/.mcp.json.example
+!/README.md
+!/kifrs-mcp/
+!/kasb-mcp/
+!/검토의견서/
+!/templates/
+
+# 허용한 폴더 안에서도 제외
+node_modules/
+.env
+*.bak
+*.log

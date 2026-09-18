@@ -1,0 +1,85 @@
+<!-- 검토의견서 부품 스니펫. report_template.html 의 <style> 이 모든 클래스를 정의한다. 번호는 "§" 로 두면 finalize.py 가 매긴다. -->
+
+<!-- 결론 박스 (장 첫머리, 1개) -->
+<div class="concl">
+  <span class="tag">결론</span>
+  <p><a class="ref" href="https://db.kasb.or.kr/s/1032/zLEbn6">제1032호 문단 23</a>에 따라 <b>상환금액의 현재가치에 해당하는 금융부채</b>를 인식합니다.</p>
+  <p>둘째 문장에는 이유를 씁니다. 세 문장을 넘기지 않습니다.</p>
+</div>
+
+<!-- 주의 박스 -->
+<div class="warn">
+  <span class="tag">주의</span>
+  <p>한두 문장. 계약 문언 정비, 미해결 쟁점, 감사인 사전 합의 등.</p>
+</div>
+
+<!-- 참고 박스 (파란 왼쪽 띠) -->
+<div class="note"><b>굵은 요지.</b> 한두 문장의 설명. → Ⅴ장</div>
+
+<!-- 짧은 문단 -->
+<p class="one">한 문장 또는 두 문장. 근거는 <a class="ref" href="https://db.kasb.or.kr/s/1110">제1110호 문단 23</a><sup class="fn" data-fn="1110-23"></sup>처럼 링크 + 각주 표시.</p>
+
+<!-- 표 -->
+<div class="tw">
+<table>
+<caption>표 §. 제목 <span class="muted">· 보조 설명 (단위: 억원)</span></caption>
+<thead><tr><th style="width:26%">구분</th><th>내용</th><th>판정</th></tr></thead>
+<tbody>
+<tr><td><b>항목</b></td><td>설명</td><td class="c"><span class="ok">✓ 채택</span></td></tr>
+<tr><td><b>항목</b></td><td>설명</td><td class="c"><span class="no">✗ 허용 안 됨</span></td></tr>
+<tr><td><b>항목</b></td><td>설명</td><td class="c"><span class="amb">△ 예외적</span></td></tr>
+<tr><td>수치 행</td><td class="num">1,234</td><td class="num neg">−55</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- 그림 (SVG) : 안에 HTML 태그 금지, 각주는 figcaption 에 -->
+<figure>
+<figcaption><b>그림 §.</b> 제목 <span class="muted">· 근거 <a class="ref" href="https://db.kasb.or.kr/s/1032/zLEbn6">제1032호 문단 23</a><sup class="fn" data-fn="1032-23"></sup></span></figcaption>
+<svg viewBox="0 0 720 120" role="img" aria-label="도해 내용을 한 문장으로">
+  <defs><marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#888B8D"/></marker></defs>
+  <rect x="10" y="30" width="200" height="50" rx="4" fill="#F4FAF3" stroke="#3F9C35" stroke-width="1.4"/>
+  <text x="110" y="60" font-size="9.2" font-weight="700" fill="#3F9C35" text-anchor="middle">박스 제목</text>
+  <line x1="212" y1="55" x2="260" y2="55" stroke="#888B8D" stroke-width="1" marker-end="url(#ar1)"/>
+</svg>
+<div class="legend"><span class="sw" style="background:#1F77C0"></span>계열 1 &nbsp;<span class="sw" style="background:#C0392B"></span>계열 2</div>
+</figure>
+
+<!-- 단계 체인 (HTML, 각주 가능) -->
+<figure>
+<figcaption><b>그림 §.</b> 판단의 다섯 단계</figcaption>
+<div class="steps">
+  <div class="st"><div class="k">① 문단 11<sup class="fn" data-fn="1032-11"></sup></div><div class="t">소제목</div>한두 줄 설명.</div>
+  <div class="st"><div class="k">② 문단 16</div><div class="t">소제목</div>설명.</div>
+  <div class="st"><div class="k">③ 문단 19</div><div class="t">소제목</div>설명.</div>
+  <div class="st"><div class="k">④ 문단 25</div><div class="t">소제목</div>설명.</div>
+  <div class="st"><div class="k">⑤ 문단 23</div><div class="t">결론</div>마지막 칸은 초록.</div>
+</div>
+</figure>
+
+<!-- 분개 카드 (둘씩 .jgrid) -->
+<div class="jgrid">
+<div class="je"><div class="jh">취득일<span>손익 없음</span></div>
+<table><tbody>
+<tr><td><span class="dc">차</span>종속기업투자주식 <span class="amt">380</span></td><td><span class="dc">대</span>현금 <span class="amt">300</span><br><span class="dc">대</span>파생상품부채 <span class="amt">80</span></td></tr>
+</tbody></table>
+<div class="why">취득원가 = 현금 + 부담한 부채의 공정가치</div></div>
+<div class="je"><div class="jh">매 결산<span>제1109호 문단 4.2.1</span></div>
+<table><tbody><tr><td><span class="dc">차</span>파생상품평가손실</td><td><span class="dc">대</span>파생상품부채</td></tr></tbody></table></div>
+</div>
+
+<!-- 3칸 타일 -->
+<div class="tiles3">
+  <div class="tl bad"><div class="h">불리한 점</div>두 줄 이내.</div>
+  <div class="tl good"><div class="h">채택</div>두 줄 이내.</div>
+  <div class="tl neu"><div class="h">중립 설명</div>두 줄 이내.</div>
+</div>
+
+<!-- 장 끝 각주 상자 : finalize.py 가 data-fns 의 키를 footnotes.json 에서 찾아 채움 -->
+<div class="fnbox" data-fns="1032-23,1110-23,1032-11"></div>
+
+<!-- 확인이 필요한 사항 표 행 -->
+<tr><td class="c">1</td><td><b>잔여 주식의 수</b></td><td>부채 최대액 = 70,000원 × 잔여 주식 수</td></tr>
+
+<!-- 인용 근거 표 행 -->
+<tr><td><a class="ref" href="https://db.kasb.or.kr/s/1032">제1032호 금융상품: 표시</a></td><td><a class="ref" href="https://db.kasb.or.kr/s/1032">11</a>(금융부채의 정의) · <a class="ref" href="https://db.kasb.or.kr/s/1032/zLEbn6">23</a>(자기지분상품 매입 의무)</td></tr>

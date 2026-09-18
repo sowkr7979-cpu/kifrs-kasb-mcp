@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "kifrs": {
+      "command": "node",
+      "args": ["kifrs-mcp/index.js"]
+    },
+    "kasb": {
+      "command": "node",
+      "args": ["kasb-mcp/index.js"]
+    }
+  }
+}

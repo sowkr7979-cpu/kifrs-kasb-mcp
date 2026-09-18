@@ -1,0 +1,202 @@
+<title>{{TITLE_SHORT}}</title>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;800&display=swap");
+  @page { size: A4; margin: 20mm 17mm 18mm 17mm; }
+
+  :root{
+    color-scheme: light;
+    --green:#3F9C35; --blue:#009CDE; --navy:#00153D;
+    --g1:#515356; --g2:#888B8D; --g3:#B8B8B9; --g4:#CDCECF; --g5:#F0F0F0;
+    --red:#C0392B; --amber:#E8A33D; --paper:#ffffff;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; padding:0;
+    font-family:"Noto Sans KR","Malgun Gothic","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size:10.2pt; line-height:1.72; color:#1f2224; background:var(--paper);
+    -webkit-print-color-adjust:exact; print-color-adjust:exact; word-break:keep-all;
+  }
+  .doc{ max-width:176mm; margin:0 auto; padding:14mm 0 20mm; }
+  @media screen and (max-width:760px){ .doc{ padding:6mm 5mm; } }
+  .page{ page-break-after:always; }
+  .page:last-child{ page-break-after:auto; }
+  @media screen{ .page{ margin-bottom:16mm; } }
+  @media print{ .doc{ max-width:none; padding:0; } .cover{ height:245mm; } }
+
+  .cover{ height:247mm; position:relative; page-break-after:always; }
+  .cover .logo{ text-align:right; }
+  .cover .logo img{ height:13mm; }
+  .cover .mid{ position:absolute; top:34%; left:0; right:0; text-align:center; }
+  .cover h1{ font-size:24pt; font-weight:800; color:var(--navy); margin:0 0 6mm; letter-spacing:-0.4pt; text-wrap:balance; }
+  .cover .sub{ font-size:14pt; color:var(--g1); font-weight:600; margin-bottom:4mm; }
+  .cover .party{ font-size:12pt; color:var(--green); font-weight:700; margin-bottom:9mm; }
+  .cover .issue{ font-size:11pt; color:var(--g1); }
+  .cover .bar{ width:64mm; height:3pt; background:var(--green); margin:7mm auto; }
+  .cover .firm{ position:absolute; bottom:34mm; right:0; text-align:right; }
+  .cover .firm .kr{ font-size:15pt; font-weight:800; color:var(--navy); }
+  .cover .firm .en{ font-size:9.5pt; color:var(--g2); letter-spacing:0.3pt; }
+  .cover .disc{ position:absolute; bottom:0; left:0; right:0; font-size:7.6pt; color:var(--g2); line-height:1.6; text-align:justify; }
+
+  h2{ font-size:14pt; font-weight:800; color:var(--navy); margin:0 0 5mm;
+      padding-bottom:2mm; border-bottom:2pt solid var(--green);
+      page-break-after:avoid; break-after:avoid; text-wrap:balance; }
+  h3{ font-size:11.4pt; font-weight:700; color:var(--navy); margin:6mm 0 2mm;
+      page-break-after:avoid; break-after:avoid; }
+  h3:first-of-type{ margin-top:2mm; }
+  p{ margin:0 0 3mm; text-align:justify; }
+
+  .concl{ border:1.4pt solid var(--green); background:#F4FAF3; border-radius:3pt;
+          padding:4mm 5mm; margin:0 0 5mm; page-break-inside:avoid; }
+  .concl .tag{ display:inline-block; background:var(--green); color:#fff; font-size:8.4pt;
+               font-weight:700; padding:0.6mm 2.4mm; border-radius:8pt; margin-bottom:2mm; }
+  .concl p{ margin:0; font-weight:600; color:var(--navy); font-size:10.4pt; }
+  .concl p + p{ margin-top:2mm; font-weight:400; color:var(--g1); font-size:9.8pt; }
+
+  .warn{ border:1.4pt solid var(--red); background:#FDF3F2; border-radius:3pt;
+         padding:4mm 5mm; margin:4mm 0; page-break-inside:avoid; }
+  .warn .tag{ display:inline-block; background:var(--red); color:#fff; font-size:8.4pt;
+              font-weight:700; padding:0.6mm 2.4mm; border-radius:8pt; margin-bottom:2mm; }
+  .warn p{ margin:0; font-size:9.8pt; }
+  .warn p + p{ margin-top:2mm; }
+
+  .note{ border-left:3pt solid var(--blue); background:#EAF4FB; padding:3.4mm 4.5mm;
+         margin:4mm 0; font-size:9.6pt; page-break-inside:avoid; }
+  .note b{ color:var(--navy); }
+
+  .tw{ overflow-x:auto; }
+  table{ width:100%; border-collapse:collapse; margin:3mm 0 4mm; font-size:9.2pt; }
+  thead{ display:table-header-group; }
+  tr{ page-break-inside:avoid; break-inside:avoid; }
+  caption{ caption-side:top; text-align:left; font-size:9.2pt; font-weight:700;
+           color:var(--navy); padding-bottom:1.6mm; }
+  th{ background:var(--g5); border:0.7pt solid var(--g4); border-top:1.6pt solid var(--green);
+      padding:1.8mm 2.4mm; font-weight:700; color:var(--navy); text-align:center; }
+  td{ border:0.7pt solid var(--g4); padding:1.8mm 2.4mm; vertical-align:top; }
+  td.c{ text-align:center; }
+  tbody tr:nth-child(even) td{ background:#FAFAFA; }
+  .ok{ color:var(--green); font-weight:700; }
+  .no{ color:var(--red); font-weight:700; }
+  .amb{ color:var(--amber); font-weight:700; }
+
+  figure{ margin:4mm 0 5mm; page-break-inside:avoid; }
+  figure svg{ width:100%; height:auto; display:block; }
+  figcaption{ font-size:8.8pt; color:var(--g2); margin-top:1.6mm; line-height:1.6; }
+  figcaption b{ color:var(--navy); }
+  svg text{ font-family:"Noto Sans KR","Malgun Gothic",sans-serif; }
+
+  sup.fn{ font-size:7.4pt; color:var(--green); font-weight:700; vertical-align:super; }
+  .fnbox{ margin-top:5mm; padding-top:2mm; border-top:0.7pt solid var(--g3);
+          font-size:8.1pt; color:var(--g1); line-height:1.55; page-break-inside:avoid; }
+  .fnbox div{ margin-bottom:1.6mm; padding-left:6mm; text-indent:-6mm; }
+  .fnbox b{ color:var(--navy); }
+
+  ul,ol{ margin:0 0 3mm; padding-left:5.5mm; }
+  li{ margin-bottom:1.4mm; text-align:justify; }
+  a{ color:#1F5FA8; text-decoration:none; }
+  a:focus-visible{ outline:2px solid var(--blue); outline-offset:2px; }
+  .sm{ font-size:9.2pt; color:var(--g1); }
+  .muted{ color:var(--g2); }
+  b.hl{ color:var(--navy); }
+
+  a.ref{ color:var(--blue); text-decoration:none; border-bottom:0.5pt dotted var(--blue); }
+  a.ref:hover{ color:var(--navy); border-bottom-color:var(--navy); }
+  .fnbox a.ref{ border-bottom-width:0.4pt; }
+
+  .sign{ text-align:center; margin-top:12mm; }
+  .sign .rule{ border-top:0.7pt solid var(--g3); margin:0 0 8mm; }
+  .sign .date{ font-size:11pt; font-weight:700; color:var(--navy); margin:5mm 0; }
+  .sign .kr{ font-size:14pt; font-weight:800; color:var(--navy); margin-top:6mm; }
+  .sign .en{ font-size:9pt; color:var(--g2); margin-bottom:6mm; }
+  .sign .who{ font-size:10pt; color:var(--g1); margin:1.5mm 0; }
+  .sign .copy{ font-size:8pt; color:var(--g2); margin-top:8mm; }
+
+  /* v3 추가 — 분개 카드 */
+  .je{ border:0.7pt solid var(--g4); border-radius:3pt; margin:2mm 0 3mm; font-size:9pt;
+       page-break-inside:avoid; break-inside:avoid; background:#fff; }
+  .je .jh{ background:var(--g5); padding:1.4mm 2.6mm; font-weight:700; color:var(--navy); font-size:8.6pt;
+           border-bottom:0.7pt solid var(--g4); display:flex; justify-content:space-between; gap:3mm; }
+  .je .jh span{ font-weight:400; color:var(--g1); }
+  .je table{ margin:0; font-size:8.9pt; }
+  .je td{ border:none; padding:1.5mm 2.6mm; vertical-align:top; width:50%; line-height:1.6; }
+  .je td + td{ border-left:0.7pt solid var(--g4); }
+  .je tbody tr:nth-child(even) td{ background:#fff; }
+  .je .dc{ color:var(--g2); font-size:7.8pt; margin-right:1mm; }
+  .je .amt{ font-variant-numeric:tabular-nums; float:right; padding-left:2mm; color:var(--navy); font-weight:600; }
+  .je .why{ padding:1.2mm 2.6mm 1.6mm; font-size:8.2pt; color:var(--g1); border-top:0.5pt dashed var(--g4); }
+  .je .why b{ color:var(--red); }
+  .jgrid{ display:grid; grid-template-columns:1fr 1fr; gap:3mm; margin:2mm 0 3mm; }
+  .jgrid .je{ margin:0; }
+  @media screen and (max-width:640px){ .jgrid{ grid-template-columns:1fr; } }
+  .num{ font-variant-numeric:tabular-nums; text-align:right; }
+  td.neg{ color:var(--red); font-weight:700; }
+  td.pos{ color:var(--green); font-weight:700; }
+  .steps{ display:grid; grid-template-columns:repeat(5,1fr); gap:2mm; margin:2mm 0 3mm; }
+  .steps .st{ border:0.7pt solid var(--g4); border-top:2pt solid var(--blue); border-radius:3pt; padding:2.2mm 2.4mm; font-size:8.6pt; line-height:1.5; background:#fff; }
+  .steps .st .k{ font-size:7.8pt; color:var(--g2); }
+  .steps .st .t{ font-weight:700; color:var(--navy); margin:0.6mm 0; font-size:9pt; }
+  .steps .st:last-child{ border-top-color:var(--green); background:#F4FAF3; }
+  @media screen and (max-width:640px){ .steps{ grid-template-columns:1fr; } }
+  .legend{ font-size:8.5pt; color:#515356; margin-top:4px; }
+  .sw{ display:inline-block; width:12px; height:8px; vertical-align:-1px; border-radius:1px; margin-right:3px; }
+  .rev{ border:1.2pt dashed var(--blue); background:#F7FBFE; border-radius:3pt; padding:3.4mm 4.5mm; margin:0 0 5mm; font-size:9.4pt; }
+  .rev b{ color:var(--navy); }
+  .rev ul{ margin:1.5mm 0 0; }
+  .rev li{ margin-bottom:0.8mm; }
+
+  .tiles3{ display:grid; grid-template-columns:repeat(3,1fr); gap:2.4mm; margin:2mm 0 3mm; }
+  .tiles3 .tl{ border:0.7pt solid var(--g4); border-radius:3pt; padding:2.6mm 3mm; font-size:8.8pt; line-height:1.55; background:#fff; }
+  .tiles3 .tl .h{ font-weight:700; color:var(--navy); margin-bottom:1mm; font-size:9.2pt; }
+  .tiles3 .tl.bad{ border-top:2pt solid var(--red); } .tiles3 .tl.good{ border-top:2pt solid var(--green); background:#F4FAF3; }
+  .tiles3 .tl.neu{ border-top:2pt solid var(--blue); }
+  @media screen and (max-width:640px){ .tiles3{ grid-template-columns:1fr; } }
+  .one{ font-size:9.6pt; color:var(--g1); margin:0 0 3mm; }
+  ul.tight li{ margin-bottom:0.8mm; }
+
+  .fnbox{ line-height:1.62; }
+</style>
+
+<div class="doc">
+
+<!-- ═══════════════ 표지 ═══════════════ -->
+<section class="cover">
+  <div class="logo"><img src="{{LOGO_DATA_URI}}" alt="로고"></div>
+  <div class="mid">
+    <h1>{{TITLE}}</h1>
+    <div class="sub">{{SUBTITLE}}</div>
+    <div class="bar"></div>
+    <div class="party">{{CLIENT}} 귀중</div>
+    <div class="issue">{{ISSUE}}</div>
+  </div>
+  <div class="firm">
+    <div class="kr">{{FIRM_KR}}</div>
+    <div class="en">{{FIRM_EN}}</div>
+    <div class="en">{{DATE}}</div>
+  </div>
+  <div class="disc">
+    {{DISCLAIMER}}
+  </div>
+</section>
+
+<!-- ═══════════════ 요약 ═══════════════ -->
+<section class="page">
+<h2>검토 결과의 요약</h2>
+{{SUMMARY}}
+</section>
+
+{{CHAPTERS}}
+
+<!-- ═══════════════ 마지막 장: 확인 사항·인용 근거·서명 ═══════════════ -->
+<section class="page">
+{{LAST_CHAPTER}}
+<div class="sign">
+  <div class="rule"></div>
+  <p>위와 같이 검토 의견을 제출합니다.</p>
+  <div class="date">{{DATE}}</div>
+  <div class="kr">{{FIRM_KR}}</div>
+  <div class="en">{{FIRM_EN}}</div>
+  <div class="who">담당 공인회계사 &nbsp;○ ○ ○ &nbsp;(인)</div>
+  <div class="copy">© {{YEAR}} {{FIRM_KR}}. 본 문서의 저작권은 {{FIRM_KR}}에 있습니다.</div>
+</div>
+</section>
+
+</div>
